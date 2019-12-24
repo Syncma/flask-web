@@ -39,6 +39,69 @@ flask web example
 python 3.6.7
 
 
+# Windows下安装pyenv环境
+
+```
+**windows下推荐使用cmder 这个工具**
+
+[Cmder](https://cmder.net/)
+```
+
+## 具体操作步骤如下
+### 1.查看使用的python版本
+
+```python
+C:\Users\Sync\Downloads\cmder
+λ python
+Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+
+
+如果你使用的是**python3** 版本，默认是支持虚拟环境
+```
+
+#### 2.开启办法
+```
+
+1.执行下面命令：
+C:\Users\Sync\Downloads\cmder
+λ python -m venv myenv
+
+-m venv  使用venv模块
+myenv  创建一个虚拟环境，名字教myenv
+
+2.会默认在当前目录创建myenv 目录
+
+输入下面的命令来激活虚拟环境：
+
+λ myenv\Scripts\activate.bat
+
+
+执行完成后会变成这样：
+C:\Users\Sync\Downloads\cmder
+(myenv) λ
+
+```
+
+### 3.在这个环境里面就可以做任何事情
+
+```python
+安装模块
+pip install flask
+
+也可以执行相关程序
+```
+
+### 4.退出 
+
+```
+输入deactivate.bat 命令就回到了普通的环境 
+```
+
+
+
+
 # 功能说明
 ```
     简单web服务
