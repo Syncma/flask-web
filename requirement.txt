@@ -9,3 +9,4 @@ supervisor==4.1.0
 flask_httpauth==3.3.0
 Flask-WTF==0.14.2
 WTForms==2.2.1
+configparser==4.0.2
