@@ -1,6 +1,5 @@
-# flask-web
+[toc]
 
-flask web example
 
 # 说明
 基于flask框架开发的一个web api
@@ -9,29 +8,30 @@ flask web example
 # 项目主要结构
 ```
 ├── app
-│   ├── api
-│   │   ├── errors.py   -定义API错误返回格式
-│   │   ├── __init__.py
-│   │   └── users.py    -路由
-│   ├── auth
-│   │   └── __init__.py -鉴权功能
-│   ├── errors
-│   │   ├── handlers.py -定义web错误返回格式
-│   │   └── __init__.py
-│   ├── __init__.py
-│   ├── models.py       -表设计
-│   ├── static          -静态文件目录
-│   └── templates       -模板目录
-├── config.py           -配置文件
-├── deployment          -部署
-│   └── supervisor
-│       └── app.conf
-├── logs                -日志目录（如果没有，系统会自动创建）
-├── README.md
-├── requirement.txt     -依赖包
-├── run.py              -主程序
-├── start.sh            -运行脚本
-└── tests               -测试用例目录
+│   ├── api
+│   │   ├── auth.py		-验证
+│   │   ├── errors.py	-定义API错误返回格式
+│   │   ├── __init__.py
+│   │   └── users.py	-路由
+│   ├── auth
+│   │   ├── forms.py	-表单数据验证
+│   │   └── __init__.py
+│   ├── __init__.py	
+│   └── models.py		-表设计
+├── conf				-配置文件
+│   ├── dev.ini
+│   └── testing.ini
+├── config.py		-读取配置
+├── deployment		-部署
+│   └── supervisor
+│       ├── app.conf
+│       ├── readme.md
+│       └── supervisor.conf
+├── README.md	
+├── requirement.txt	-依赖包
+├── run.py		-主程序
+└── start.sh	-运行脚本
+
 
 ```
 
@@ -41,11 +41,10 @@ python 3.6.7
 
 # Windows下安装pyenv环境
 
-```
+
 **windows下推荐使用cmder 这个工具**
 
 [Cmder](https://cmder.net/)
-```
 
 ## 具体操作步骤如下
 ### 1.查看使用的python版本
@@ -61,7 +60,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 如果你使用的是**python3** 版本，默认是支持虚拟环境
 ```
 
-#### 2.开启办法
+### 2.开启办法
 ```
 
 1.执行下面命令：
@@ -84,8 +83,8 @@ C:\Users\Sync\Downloads\cmder
 
 ```
 
-### 3.在这个环境里面就可以做任何事情
-
+### 3.环境
+在这个环境里面就可以做任何事情
 ```python
 安装模块
 pip install flask
@@ -113,7 +112,8 @@ pip install flask
 pip install -r requirement.txt
 ```
 
-## 2.初始化数据表信息（**注意:数据库需要手动创建**）
+## 2.初始化数据表信息
+**`注意:数据库需要手动创建`**
 
 ```
 命令顺序是： 
@@ -122,7 +122,7 @@ flask db migrate   #生成一个新的修订版本
 flask db upgrade    #创建到数据库
 ```
 
-### 具体操作步骤：
+## 3.具体操作步骤
 ```
 [jian@laptop apiserver]$ pwd
 /home/jian/prj/python/apiserver
@@ -149,20 +149,20 @@ INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.runtime.migration] Running upgrade  -> 20f73d9e757e, empty message
 
 ```
-### 这些命令的含义可以查看
+##4.这些命令的含义可以查看
 ```
 https://www.jianshu.com/p/4b9740551f5c
 ```
 
 
-### 3.启动服务
+##5.启动服务
 
 ```
 sh start.sh
 ```
 
 
-### 4.gunicorn 启动方式
+##6.gunicorn 启动方式
 ```
 [jian@laptop apiserver]$ pwd
 /home/jian/prj/python/apiserver
@@ -175,7 +175,7 @@ sh start.sh
 
 
 
-### 5.待办事宜 Todo 列表
+#待办事宜 Todo 列表
 
 - [x] 用户鉴权-基本验证
 - [x] 根据不同环境读取不同配置文件
