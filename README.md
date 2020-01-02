@@ -168,7 +168,7 @@ sh start.sh
 /home/jian/prj/python/apiserver
 
 [jian@laptop apiserver]$ gunicorn -b localhost:8000 -w 2 run:app
-#其中： 第一个 run 指的是 run.py 文件； 
+其中： 第一个 run 指的是 run.py 文件； 
 第二个指的是 flask 应用的名字，app = Flask(name)
 -w 为开启n个进程
 ```
