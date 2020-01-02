@@ -42,7 +42,8 @@ def create_user():
         return json_response(code=response.status_code, data=user.to_dict())
 
     else:
-        return bad_request('参数错误')
+        error = form.errors
+        return bad_request(error)
 
 
 #登录

@@ -10,7 +10,7 @@ def error_response(status_code, message=None):
     response = jsonify(payload)
     response.status_code = status_code
 
-    return json_response(code=status_code, msg=payload['error'])
+    return json_response(code=status_code, msg=payload['message'])
 
 
 def bad_request(message):
