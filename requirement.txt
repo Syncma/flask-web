@@ -10,3 +10,6 @@ flask_httpauth==3.3.0
 Flask-WTF==0.14.2
 WTForms==2.2.1
 configparser==4.0.2
+flask-marshmallow==0.10.1
+marshmallow-sqlalchemy==0.21.0
+marshmallow==3.3.0

@@ -6,6 +6,7 @@ from flask_json import json_response
 from app.api.auth import basic_auth, token_auth
 from app.auth.forms import LoginForm
 from app.api.errors import bad_request
+from app.serializers import user_schema
 
 
 #在视图中使用蓝图
@@ -38,8 +39,9 @@ def create_user():
             db.session.rollback()  #事务回滚
 
         #返回值
-        response = jsonify(user.to_dict())
-        return json_response(code=response.status_code, data=user.to_dict())
+        user_dict = user_schema.dump(user)
+        response = jsonify(user_dict)
+        return json_response(code=response.status_code, data=user_dict)
 
     else:
         error = form.errors
