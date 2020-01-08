@@ -34,8 +34,9 @@ def load_config():
     port = config["db"]["port"]
     database = config["db"]["database"]
 
-    db_url = "mysql://{}:{}@{}:{}/{}?".format(user, password, host, port,
-                                              database)
+    # Fix bug:ModuleNotFoundError: No module named 'MySQLdb'
+    db_url = "mysql+pymysql://{}:{}@{}:{}/{}?".format(user, password, host,
+                                                      port, database)
 
     return "%s" % db_url
 
