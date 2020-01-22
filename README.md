@@ -1,4 +1,25 @@
-[toc]
+<!-- TOC -->
+
+- [说明](#说明)
+- [项目主要结构](#项目主要结构)
+- [运行环境](#运行环境)
+- [Windows下安装pyenv环境](#windows下安装pyenv环境)
+    - [具体操作步骤如下](#具体操作步骤如下)
+        - [1.查看使用的python版本](#1查看使用的python版本)
+        - [2.开启办法](#2开启办法)
+        - [3.环境](#3环境)
+        - [4.退出](#4退出)
+- [功能说明](#功能说明)
+- [安装步骤](#安装步骤)
+    - [1.安装依赖模块](#1安装依赖模块)
+    - [2.初始化数据表信息](#2初始化数据表信息)
+    - [3.具体操作步骤](#3具体操作步骤)
+    - [4.这些命令的含义可以查看](#4这些命令的含义可以查看)
+    - [5.启动服务](#5启动服务)
+    - [6.gunicorn 启动方式](#6gunicorn-启动方式)
+- [待办事宜 Todo 列表](#待办事宜-todo-列表)
+
+<!-- /TOC -->
 
 
 # 说明
@@ -149,20 +170,20 @@ INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.runtime.migration] Running upgrade  -> 20f73d9e757e, empty message
 
 ```
-##4.这些命令的含义可以查看
+## 4.这些命令的含义可以查看
 ```
 https://www.jianshu.com/p/4b9740551f5c
 ```
 
 
-##5.启动服务
+## 5.启动服务
 
 ```
 sh start.sh
 ```
 
 
-##6.gunicorn 启动方式
+## 6.gunicorn 启动方式
 ```
 [jian@laptop apiserver]$ pwd
 /home/jian/prj/python/apiserver
@@ -175,7 +196,7 @@ sh start.sh
 
 
 
-#待办事宜 Todo 列表
+# 待办事宜 Todo 列表
 
 - [x] 用户鉴权-基本验证
 - [x] 根据不同环境读取不同配置文件
